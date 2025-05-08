@@ -7,11 +7,6 @@ export default function AppNavbar() {
     const { user, unsetUser } = useContext(UserContext);
     const navigate = useNavigate();
 
-    const logout = () => {
-        unsetUser();
-        navigate('/login');
-    }
-
     const handleBrandClick = (e) => {
         e.preventDefault();
         if (user.id !== null) {
@@ -31,7 +26,6 @@ export default function AppNavbar() {
                         {user.id !== null ? (
                             <>
                                 <Nav.Link as={Link} to="/workouts">Workouts</Nav.Link>
-                                <Nav.Link onClick={logout}>Logout</Nav.Link>
                             </>
                         ) : (
                             <>
@@ -45,3 +39,4 @@ export default function AppNavbar() {
         </Navbar>
     );
 }
+
