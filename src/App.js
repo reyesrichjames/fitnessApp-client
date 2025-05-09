@@ -20,6 +20,10 @@ function App() {
 
     function unsetUser() {
         localStorage.clear();
+        setUser({
+            id: null,
+            isAdmin: null
+        });
     }
 
     useEffect(() => {
@@ -59,6 +63,7 @@ function App() {
 }
 
 export default App;
+
 
 
 

@@ -16,6 +16,11 @@ export default function AppNavbar() {
         }
     }
 
+    const handleLogout = () => {
+        unsetUser();
+        navigate('/login');
+    }
+
     return (
         <Navbar bg="dark" variant="dark" expand="lg">
             <Container>
@@ -26,6 +31,7 @@ export default function AppNavbar() {
                         {user.id !== null ? (
                             <>
                                 <Nav.Link as={Link} to="/workouts">Workouts</Nav.Link>
+                                <Nav.Link onClick={handleLogout}>Logout</Nav.Link>
                             </>
                         ) : (
                             <>
@@ -39,4 +45,5 @@ export default function AppNavbar() {
         </Navbar>
     );
 }
+
 
